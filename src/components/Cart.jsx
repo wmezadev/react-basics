@@ -2,7 +2,7 @@ import React from 'react'
 import './cart.css'
 import Product from './Product'
 
-const Cart = ({cart}) => (
+const Cart = ({cart, addProduct}) => (
     <div className="cart">
         <h2>Your shopping cart</h2>
         {
@@ -14,6 +14,8 @@ const Cart = ({cart}) => (
                     <Product
                         key={product.id}
                         product={product}
+                        cart={cart}
+                        addProduct={addProduct}
                     />
                 ))
         }

@@ -7,20 +7,43 @@ const Product = ({product, products, cart, addProduct}) => {
     // add product to cart
     const selectProduct = (id) => {
         const product = products.find(product => product.id === id);
-        addProduct([...cart,product]);
+        addProduct([...cart, product]);
+    }
+
+    const removeProduct = (id) => {
+        const products = cart.filter(product => product.id !== id)
+        // Set products on state
+        addProduct(products)
     }
 
     return ( 
         <div id={id}>
             <h3>{name}</h3>
             <p>$ {price}</p>
-            <button 
-                type="button"
-                id={`button-${id}`}
-                onClick={ () => selectProduct(id)}
-            >
-                Comprar
-            </button>
+            {
+                products 
+                ?
+                    (
+                        <button 
+                            type="button"
+                            id={`add-${id}`}
+                            onClick={ () => selectProduct(id)}
+                        >
+                            Add
+                        </button>
+                    )
+                :
+                    (
+                        <button 
+                            type="button"
+                            id={`remove-${id}`}
+                            onClick={ () => removeProduct(id) }
+                        >
+                            Remove
+                        </button>   
+                    )
+            }
+            
         </div>  
     );
 
