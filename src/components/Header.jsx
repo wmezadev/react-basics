@@ -1,9 +1,8 @@
 import React from 'react';
 
-function Header () {
-
+function Header ({title}) {
     return (
-        <h1 id="header" className="header">E-commerce</h1>
+        <h1 id="header" className="header">{title}</h1>
     );
 }
 

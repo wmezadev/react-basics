@@ -3,10 +3,13 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 function App() {
+
+  const date = new Date().getFullYear();
+
   return (
     <Fragment>
-      <Header/>
-      <Footer/>
+      <Header title='E-commerce' />
+      <Footer date={date}/>
     </Fragment>
   );
 }
