@@ -5,12 +5,16 @@ import Product from './components/Product';
 
 function App() {
 
+  // Product list
   const [products, setProducts] = useState([
     { id: 1, name: 'Shirt ReactJS', price: 50 },
     { id: 2, name: 'Shirt VueJS', price: 40 },
     { id: 3, name: 'Shirt Node.JS', price: 30 },
     { id: 4, name: 'Shirt Angular', price: 20 }
   ]);
+
+  // State for shopping cart
+  const [ cart, addProduct] = useState([]);
 
   const date = new Date().getFullYear();
 
@@ -20,7 +24,13 @@ function App() {
       <h2>Product List</h2>
       { 
         products.map(product => (
-          <Product key={product.id} product={product}/>
+          <Product 
+          key={product.id} 
+          product={product}
+          products={products}
+          cart={cart}
+          addProduct={addProduct}
+          />
         ))
       }
       <Footer date={date}/>

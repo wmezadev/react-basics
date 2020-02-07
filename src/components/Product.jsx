@@ -1,12 +1,13 @@
 import React from 'react'
 
-const Product = ({product}) => {
+const Product = ({product, products, cart, addProduct}) => {
     
     const { name, price, id } = product;
 
     // add product to cart
     const selectProduct = (id) => {
-        console.log('Product added', id);
+        const product = products.find(product => product.id === id)
+        console.log(product)
     }
 
     return ( 
@@ -20,7 +21,7 @@ const Product = ({product}) => {
             >
                 Comprar
             </button>
-        </div> 
+        </div>  
     );
 
 }
