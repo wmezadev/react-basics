@@ -6,8 +6,8 @@ const Product = ({product, products, cart, addProduct}) => {
 
     // add product to cart
     const selectProduct = (id) => {
-        const product = products.find(product => product.id === id)
-        console.log(product)
+        const product = products.find(product => product.id === id);
+        addProduct([...cart,product]);
     }
 
     return ( 

@@ -14,7 +14,7 @@ function App() {
   ]);
 
   // State for shopping cart
-  const [ cart, addProduct] = useState([]);
+  const [cart, addProduct] = useState([]);
 
   const date = new Date().getFullYear();
 
